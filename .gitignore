@@ -3,7 +3,7 @@ server/node_modules
 server/src/config/hidden
 client/.DS_Store
 client/node_modules
-client/src/data
+client/src/data/Game Contents
 Dockerfile*
 *docker*
 .env
