@@ -1,0 +1,9 @@
+server/.DS_Store
+server/node_modules
+server/src/config/hidden
+client/.DS_Store
+client/node_modules
+client/src/data
+Dockerfile*
+*docker*
+.env
