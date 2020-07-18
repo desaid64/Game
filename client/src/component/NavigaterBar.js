@@ -67,9 +67,11 @@ class NavigationBar extends React.Component {
             </Form>
             </Navbar.Collapse>
         </Navbar>
-        {this.state.pdfAvailable && <SinglePagePDFViewer pdf={this.state.samplePdf} />}
-        <h1> Multi Page</h1>
-        {this.state.pdfAvailable && <AllPagesPDFViewer pdf={this.state.samplePdf} />}
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            {this.state.pdfAvailable && <SinglePagePDFViewer pdf={this.state.samplePdf} />}
+            <h1> Multi Page</h1>
+            {this.state.pdfAvailable && <AllPagesPDFViewer pdf={this.state.samplePdf} />}
+        </div>   
         </div>
     );
   }
