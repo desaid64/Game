@@ -47,7 +47,13 @@ import Lucy_108711 from './Game Contents/Receipts/Lucy Receipt 108711.pdf'
 import Maria_100300 from './Game Contents/Receipts/Maria Receipt 100300.pdf'
 import Paula_109200 from './Game Contents/Receipts/Paula Receipt 109200.pdf'
 
-
+import Jamal_P from './Game Contents/Character Photos/Jamal Photo.jpg'
+import Jasmine_P from './Game Contents/Character Photos/Jasmine Photo.jpg'
+import Lucy_P from './Game Contents/Character Photos/Lucy Photo.jpg'
+import Maria_P from './Game Contents/Character Photos/Maria Photo.jpg'
+import Matt_P from './Game Contents/Character Photos/Matt Photo.jpg'
+import Paula_P from './Game Contents/Character Photos/Paula Photo.jpg'
+import Rachel_P from './Game Contents/Character Photos/Rachel Photo.jpg'
 
 const allpdfs = {
 
@@ -108,7 +114,46 @@ const allpdfs = {
     }
 }
 
+const allImgs = {
+    "Jamal" : {
+        "width" : 550,
+        "height" : 500,
+        "src" : Jamal_P,
+    },
+    "Jasmine" : {
+        "width" : 450,
+        "height" : 500,
+        "src" : Jasmine_P,
+    },
+    "Lucy" : {
+        "width" : 300,
+        "height" : 500,
+        "src" : Lucy_P,
+    },
+    "Maria" : {
+        "width" : 365,
+        "height" : 500,
+        "src" : Maria_P,
+    },
+    "Matt" : {
+        "width" : 325,
+        "height" : 500,
+        "src" : Matt_P,
+    },
+    "Paula": {
+        "width" : 380,
+        "height" : 500,
+        "src" : Paula_P,
+    },
+    "Rachel" :{
+        "width" : 260,
+        "height" : 500,
+        "src" : Rachel_P,
+    }
+}
+const Characters = ["Jamal","Jasmine" ,"Jim","Lucy","Maria","Matt","Paula","Rachel"]
+
 function findPdf(key,value){
     return allpdfs[key][value];
 }
-export default {findPdf,allpdfs};
+export default {findPdf,allpdfs,allImgs,Characters};

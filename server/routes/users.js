@@ -3,9 +3,9 @@ var router = express.Router();
 const db = require("../src/config/db.js");
 
 // Get user info
-router.get('/', function(req, res, next) {
-  const sql = `select * from GameUser;`
-  db.query(sql, (err, results) => {
+router.get('/:userID', function(req, res, next) {
+  const sql = 'Call getUserById(?);'
+  db.query(sql, [req.params.userID],(err, results) => {
     if (err) throw err;
     res.json(results[0][0]);
   });
@@ -21,9 +21,9 @@ router.post('/start', function(req, res, next) {
 });
 
 //end game
-router.get('/end/:userID', function(req, res, next) {
-  const sql = `CALL endGame(?);`
-  db.query(sql, [req.params.userID],(err, results) => {
+router.post('/end', function(req, res, next) {
+  const sql = `CALL endGame(?,?);`
+  db.query(sql, [req.body.userID,req.body.answer],(err, results) => {
     if (err) throw err;
     res.json(results[0][0]);
   });

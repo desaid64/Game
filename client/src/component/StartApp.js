@@ -10,7 +10,7 @@ class StartApp extends React.Component{
     super(props);
     this.state={
       redirect: false,
-      userID: ""
+      userID: 0
     };
     this.onStartGame=this.onStartGame.bind(this);
   }
@@ -19,23 +19,23 @@ class StartApp extends React.Component{
     e.preventDefault();
     axios.post('/users/start', {})
       .then(res => {
-        console.log(res.data);
         this.setState({
           userID: res.data.userID,
           redirect: true
-        })
+        });
+        this.props.getUser(this.state.userID);
     });
   }
 
   render(){
+
       if(this.state.redirect){
-        return <Redirect to='/screen'/>;
+        return <Redirect to='/nav'/>;
       }
       return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          {this.state.apiResponse}
             <h1>Welcome to Murder Mystery</h1>
           <Button variant="primary" size="lg" onClick={this.onStartGame}> Start</Button>
         </header>
